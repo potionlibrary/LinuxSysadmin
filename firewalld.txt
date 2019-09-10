@@ -11,3 +11,7 @@ sudo firewall-cmd --zone=public --remove-port=12345/tcp --permanent
 port forward
 
 sudo firewall-cmd --zone="public" --add-forward-port=port=80:proto=tcp:toport=12345
+
+view all
+
+firewall-cmd --list-all
