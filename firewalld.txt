@@ -1,0 +1,13 @@
+*add service
+
+sudo firewall-cmd --zone=public --add-service=http --permanent
+sudo firewall-cmd --zone=public --remove-service=http --permanent
+
+*add port
+
+sudo firewall-cmd --zone=public --add-port=12345/tcp --permanent
+sudo firewall-cmd --zone=public --remove-port=12345/tcp --permanent
+
+port forward
+
+sudo firewall-cmd --zone="public" --add-forward-port=port=80:proto=tcp:toport=12345
