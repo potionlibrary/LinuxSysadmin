@@ -9,7 +9,6 @@ java -version
 
 sudo groupadd tomcat
 sudo mkdir /opt/tomcat
-sudo useradd -s /bin/nologin -g tomcat -d /opt/tomcat tomcat
 
 
 
