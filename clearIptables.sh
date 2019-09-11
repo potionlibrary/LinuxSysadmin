@@ -1,4 +1,5 @@
 iptables -L -n
+ip6tables -L -n
 
 echo ""
 
@@ -19,3 +20,4 @@ ip6tables --table filter --delete-chain
 echo ""
 
 iptables -L -n
+ip6tables -L -n
