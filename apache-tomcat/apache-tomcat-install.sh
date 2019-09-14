@@ -27,8 +27,6 @@ sudo chgrp -R tomcat lib
 sudo chmod g+rwx bin
 sudo chmod g+r bin/*
 
-sudo vi /etc/systemd/system/tomcat.service
-
 sudo iptables -I INPUT 1 -i eth0 -p tcp --dport 8080 -j ACCEPT
 
 sudo systemctl restart tomcat.service
