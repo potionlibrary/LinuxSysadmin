@@ -11,7 +11,7 @@ cd ~
 wget https://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.45/bin/apache-tomcat-8.5.45.tar.gz
 sudo tar -zxvf apache-tomcat-8.5.45.tar.gz -C /opt/tomcat --strip-components=1
 
-echo "export CATALINA_HOME="/usr/tomcat"" >> ~/.bashrc
+echo export CATALINA_HOME="/usr/tomcat" >> ~/.bashrc
 source ~/.bashrc
 
 cd /opt/tomcat/bin
