@@ -1,10 +1,9 @@
-sudo yum update -y
-
-
-sudo yum install java-1.8.0-openjdk.x86_64 -y
-
-
-java -version
+yum update -y 
+yum install httpd -y 
+yum installl wget -y 
+yum install iptables -y 
+yum install iptables-services -y 
+yum install java-1.8.0-openjdk.x86_64 -y
 
 
 sudo groupadd tomcat
