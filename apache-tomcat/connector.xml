@@ -1,0 +1,39 @@
+<Connector port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+    <!-- A "Connector" using the shared thread pool-->
+    <!--
+    <Connector executor="tomcatThreadPool"
+               port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+    -->
+    <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443
+         This connector uses the NIO implementation. The default
+         SSLImplementation will depend on the presence of the APR/native
+         library and the useOpenSSL attribute of the
+         AprLifecycleListener.
+         Either JSSE or OpenSSL style configuration may be used regardless of
+         the SSLImplementation selected. JSSE style configuration is used below.
+    -->
+
+
+    <Connector protocol="org.apache.coyote.http11.Http11NioProtocol"
+        sslImplementationName="org.apache.tomcat.util.net.jsse.JSSEImplementation"
+        port="8443" maxThreads="200"
+        scheme="https" secure="true" SSLEnabled="true"
+        compression="on" compressionMinSize="1048576"
+        compressableMimeType="text/html,text/xml,text/plain,text/javascript,text/css,application/json,application/javascript"
+        defaultSSLHostConfigName="ec2-52-53-200-76.us-west-1.compute.amazonaws.com"      >
+
+        <SSLHostConfig protocols="TLSv1.2,+TLSv1.1,+TLSv1"
+                ciphers="TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256"
+                hostName="ec2-52-53-200-76.us-west-1.compute.amazonaws.com" >
+
+                <Certificate
+                        certificateKeyAlias="server"
+                        certificateKeystoreFile="/opt/tomcat/certs/tomcat.keystore"
+                        certificateKeystorePassword="toapgi" type="RSA" />
+        </SSLHostConfig>
+
+     </Connector>
